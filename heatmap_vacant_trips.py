@@ -3,9 +3,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Define the path to the CSV file
+# csv file path
 CSV_FILE_PATH = '22data/jan22data/jan22_sorted_vacant_trips.csv'
-# Define the time category of interest
+# time category
 TIME_CATEGORY = '0-3'
 # save path
 save_dir = "22data/jan22data"  # save directory
@@ -18,7 +18,7 @@ def filter_data_by_time_category(data, time_category):
 
 def plot_heatmap(data):
     plt.figure(figsize=(10, 8))
-    # Using hexbin for density plot
+    # hexbin for density plot
     plt.hexbin(data['pickup.lon'], data['pickup.lat'], gridsize=50, cmap='Reds', bins='log')
     plt.colorbar(label='Log10 of count')
     plt.xlabel('Longitude')
